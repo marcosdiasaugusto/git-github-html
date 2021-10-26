@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git tag</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Tags
+
+Criando uma tag leve
+
+git tag vs-1.1
+
+Criando uma tag anotada
+
+git tag -a vs-1.1 -m "Minha versão 1.1"
+
+Criando uma tag assinada
+
+Para criar uma tag assinada é necessário uma chave privada (GNU Privacy Guard - GPG).
+
+git tag -s vs-1.1 -m "Minha tag assinada 1.1"
+
+Criando tag a partir de um commit (hash)
+
+git tag -a vs-1.2 9fceb02
+
+Criando tags no repositório remoto
+
+git push origin vs-1.2
+
+Criando todas as tags locais no repositório remoto
+
+git push origin --tags
+
+-*-
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+
+PS C:\workspace\geek - julius> cd secao04
+PS C:\workspace\geek - julius\secao04> git tag v1.0
+PS C:\workspace\geek - julius\secao04> git tag
+v1.0
+PS C:\workspace\geek - julius\secao04>
+
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace
+$ cd geek - maria
+bash: cd: too many arguments
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace
+$ cd "geek - maria"
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - maria
+$ cd secao04
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - maria/secao04 (master)
+$ git tag
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - maria/secao04 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+
+PS C:\workspace\geek - julius\secao04> git push origin v1.0
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To C:\workspace\geek - secao04_bare
+ * [new tag]         v1.0 -> v1.0  
+PS C:\workspace\geek - julius\secao04>
+
+
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - maria/secao04 (master)
+$ git pull
+From C:\workspace\geek - secao04_bare
+ * [new tag]         v1.0       -> v1.0
+Already up to date.
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - maria/secao04 (master)
+$ git tag
+v1.0
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - maria/secao04 (master)
+$ git checkout v1.0
+Note: switching to 'v1.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 9eef895 Adi├º├úo do arquivo 1m
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - maria/secao04 ((v1.0))
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+
+PS C:\workspace\geek - maria> git tag
+fatal: not a git repository (or any of the parent directories): .git
+PS C:\workspace\geek - maria> cd secao4
+cd : Não é possível localizar o caminho 'C:\workspace\geek - maria\secao4' porque ele 
+não existe.
+No linha:1 caractere:1
++ cd secao4
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\workspace\geek - maria\secao4:String) 
+    [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCom 
+   mand
+ 
+PS C:\workspace\geek - maria> cd secao04
+PS C:\workspace\geek - maria\secao04> git tag   
+v1.0
+PS C:\workspace\geek - maria\secao04> git checkout v1.0
+HEAD is now at 9eef895 Adição do arquivo 1m
+PS C:\workspace\geek - maria\secao04>
+Eu vou até abrir um terminal aqui vocês Salah downloads Maria se são 4 GBytes status tudo certo.
+Ted não tem nada ela não conhece ainda esse cara que a gente precisa fazer lá no Júlio se lembra que
+a gente tem que ter um post tão grande pois só que a gente tem que passar aqui pra onde ri e o nome
+da técnica a gente criou que a gente vai tá passando a gente vai estar submetendo essa tese com o projeto
+em si.
+Então ele falou ok nova até um ponto zero.
+Esse origem lembra origem e é o nosso repositório originário remoto.
+Eu estou enviando para o repositório remoto
+até um ponto zero e ele colocou todo esse conteúdo aqui.
+Como essa Ted.
+Vamos voltar aqui na Maria porque essa gente deixa aqui novamente um guia de status.
+Nada mudou.
+Ela não tem nada.
+Só que a gente pode dar um de Pu pra que ela atualize o código dela.
+E note que ele disse que você recebeu uma nova tele já está atualizado.
+Então Gui segue está ali um ponto zero.
+A Maria quer dar uma olhada.
+Ela quer dar uma olhada em como está essa versão 2.0.
+E a gente pode fazer isso Gui Checkout o nome da nossa terra é um ponto zero.
+Olha aqui que ele diz aqui pra gente quando a gente fez isso.
+OP Você mudou para ver um ponto zero.
+Lembra disso aqui.
+A gente fez isso quando a gente muda de mente também.
+O Gui te dá essas informações pra gente isso a gente dê uma olhada aqui dentro.
+A gente tem os nossos arquivos da Tec.
+Se a gente olhar aqui alguém te status ele vai falar OP Você tá deles encaixado da cabeça.
+Você tá na um ponto zero.
+Lembrando que a gente não comenta mais entre eles.
+A gente só poderia dar uma olhada aqui no código.
+Como é que tá que a gente está fazendo.
+LEGAL PRA VOLTAR PARA Master Gui checkout Master Gui status tá lá.
+A gente está na Mast.
+Legal show de bola.
+Pessoal isso é realmente bastante útil principalmente por exemplo foi criada a versão 1 ponto zero quero
+disponibilizar para meus usuários a gente vai ver principalmente quando a gente vai trabalhando com
+um byte bambi que o bit gera lá pra gente.
+A opção de download ele vai te dá a opção de você fazer o download de formas e piada direto desse projeto
+também bastante legal.
+Isso é você às vezes quer dar uma olhada no seu código para ver se realmente era aquilo que você queria.
+Pode ser ainda que
+você queira criar um novo repositório pra fazer algum ajuste ao descobrir um bug lá lançou a versão
+um ponto zero descobriu um bug você pode
+criar um novo ambiente a partir desse cara aqui
+e continuar o processo além de correção de bugs.
+Tá legal.
+Eu não sei se você se lembra.
+Vou voltar aqui só para deixar isso claro.
+Vou alterar aqui novamente até agora.
+Olha aqui que o Tite te diz aqui se você quer criar um novo Oriente pra manter os comitês que você criar.
+Ele está falando aqui como que a gente faria isso Mitsuhide c meu grande tá.
+A gente pode até fazer isso grite sei te menos c vou me chamar de correções ver um ponto zero correções
+em.
+E ele falou Sweet Tony Brent gente Brent.
+Olha só no brinde a gente está Guide e status.
+Isso aqui é um grande dom da nossa terra e aqui a gente ah eu preciso corrigir.
+Preciso corrigir Barbies por exemplo sei lá vou criar um novo arquivo Arquivo 2 m ponto HTML.
+
+
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

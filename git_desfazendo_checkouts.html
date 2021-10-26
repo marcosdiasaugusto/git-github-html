@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>Desfazendo Checkouts</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+
+<b><i>PS C:\workspace\Clone2> dir</b></i>
+
+    Diretório: C:\workspace\Clone2
+
+
+Mode                 LastWriteTime         Length Name                                   
+d-----        21/10/2021     09:53                geek-git1                              
+
+<b><i>
+PS C:\workspace\Clone2> cd geek-git1
+PS C:\workspace\Clone2\geek-git1> git status
+</b></i>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+<b><i>PS C:\workspace\Clone2\geek-git1> git status</b></i>
+
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   dois.txt
+        modified:   outro.txt
+        modified:   tres.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+<b><i>
+PS C:\workspace\Clone2\geek-git1> git checkout -- .
+PS C:\workspace\Clone2\geek-git1> git status
+</b></i>
+nothing to commit, working tree clean
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+        modified:   dois.txt
+        modified:   tres.txt
+        modified:   um.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+<b><i>
+PS C:\workspace\Clone2\geek-git1> git checkout -- tres.txt
+PS C:\workspace\Clone2\geek-git1> git status
+</b></i>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   dois.txt
+        modified:   um.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+<b><i>
+PS C:\workspace\Clone2\geek-git1> git add .
+PS C:\workspace\Clone2\geek-git1> git commit -m "Mudaanças efetuadas"
+</b></i>
+[master b464482] Mudaanças efetuadas
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+<b><i>PS C:\workspace\Clone2\geek-git1> git push -u origin master</b></i>
+
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/marcosdiasaugusto/geek-git1.git
+   4b4c658..b464482  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+<b><i>PS C:\workspace\Clone2\geek-git1> git status</b></i>
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   outro.txt
+        modified:   tres.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+<b><i>
+PS C:\workspace\Clone2\geek-git1> git add .
+PS C:\workspace\Clone2\geek-git1> git checkout -- .
+PS C:\workspace\Clone2\geek-git1> git status       
+</b></i>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   outro.txt
+        modified:   tres.txt
+<b><i>
+PS C:\workspace\Clone2\geek-git1> git checkout HEAD -- .
+PS C:\workspace\Clone2\geek-git1> git status
+</b></i>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+PS C:\workspace\Clone2\geek-git1> 
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

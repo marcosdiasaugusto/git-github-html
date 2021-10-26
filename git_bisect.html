@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git rebase</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Bisect
+
+O bisect (pesquisa binária) é útil para encontrar um commit que esta gerando um bug ou uma 
+inconsistência entre uma sequência de commits.
+
+Iniciar pequinsa binária
+
+git bisect start
+
+Marcar o commit atual como ruim
+
+git bisect bad
+
+Marcar o commit de uma tag que esta sem o bug/inconsistência
+
+git bisect good vs-1.1
+
+Marcar o commit como bom
+
+O GIT irá navegar entre os commits para ajudar a indentificar o commit que esta com o 
+problema. Se o commit atual não estiver quebrado, então é necessário marca-lo como bom.
+
+git bisect good
+
+Marcar o commit como ruim
+
+Se o commit estiver com o problema, então ele deverá ser marcado como ruim.
+
+git bisect bad
+
+Finalizar a pesquisa binária
+
+Depois de encontrar o commit com problema, para retornar para o HEAD utilize:
+
+git bisect reset
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

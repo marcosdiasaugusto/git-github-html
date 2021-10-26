@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git bare</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+	
+O git é descentralizado e cada repositório no git é um nó na rede. Ao trabalhar com 
+médios e grandes projetos definimos um repositório como uma central onde cada desenvolvedor 
+com seu repositório local submete os códigos/dados.
+Exemplo de repositório Bare é o github. Teremos um repositório Bare Repository e dois 
+desenvolvedores vao submeter os dados para esse repositório central.
+No VSC > Open Folder > Secao_04_Bare
+
+Ctrl+d fecha o terminal / fecha projeto
+Open Folder > Julius
+
+Agora o git push não deu erro por ser um bare repository
+Git push envia seus commits para o repositório central remoto.
+
+Fecha o Julius e abre um novo folder (novo colaborador)
+
+Quando não definimos o usuário dá erro. No meu git não ocorreu:
+
+A Maria tem os arquivos dela e a do Julius. O Julius não tem os arquivos da Maria. Para atualizar:
+Abre a pasta do Julius, diretório secao04 e dá o git pull
+
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+
+PS C:\workspace\geek - julius> dir
+    Diretório: C:\workspace\geek - julius
+
+
+----                 -------------         ------ ----                                   
+d-----        20/10/2021     10:17                secao04                                
+
+
+PS C:\workspace\geek - julius> cd secao04
+PS C:\workspace\geek - julius\secao04> dir
+Cloning into '.'...
+warning: You appear to have cloned an empty repository.
+done.
+PS C:\workspace\geek - julius\secao04> git config user.name "Julius Ricardo"
+PS C:\workspace\geek - julius\secao04> git config user.email "julius.ricardo@gmail.com"  
+PS C:\workspace\geek - julius\secao04> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        arquivo1j.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\workspace\geek - julius\secao04> git add arquivo1j.html
+PS C:\workspace\geek - julius\secao04> git commit -m "Adição do arquivo 1j"
+[master (root-commit) 6e6c29b] Adição do arquivo 1j
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 arquivo1j.html
+PS C:\workspace\geek - julius\secao04> git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 235 bytes | 78.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To C:\workspace\geek - secao04_bare
+ * [new branch]      master -> master
+PS C:\workspace\geek - julius\secao04> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+PS C:\workspace\geek - julius\secao04>
+
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+
+PS C:\workspace\geek - julius> cd secao04
+PS C:\workspace\geek - julius\secao04> git push
+To C:\workspace\geek - secao04_bare
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'C:\workspace\geek - secao04_bare'       
+hint: Updates were rejected because the remote contains work that you do    
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes   
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.  
+PS C:\workspace\geek - julius\secao04> git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 277 bytes | 14.00 KiB/s, done.
+From C:\workspace\geek - secao04_bare
+   6e6c29b..9eef895  master     -> origin/master
+Updating 6e6c29b..9eef895
+Fast-forward
+ arquivo1m.html | 1 +
+ 1 file changed, 1 insertion(+)   
+ create mode 100644 arquivo1m.html
+PS C:\workspace\geek - julius\secao04>
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+
+PS C:\workspace\geek - maria> git status
+fatal: not a git repository (or any of the parent directories): .git
+PS C:\workspace\geek - maria> cd secao04
+PS C:\workspace\geek - maria\secao04> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+PS C:\workspace\geek - maria\secao04> cd..
+PS C:\workspace\geek - maria> cd..
+PS C:\workspace> cd "geek - julius"
+PS C:\workspace\geek - julius> cd secao04
+PS C:\workspace\geek - julius\secao04> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+PS C:\workspace\geek - julius\secao04>
+
+PS C:\workspace\geek - maria\secao04> cd..
+PS C:\workspace\geek - maria> cd..
+PS C:\workspace> cd "geek - julius"
+PS C:\workspace\geek - julius> cd secao04
+PS C:\workspace\geek - julius\secao04> git status
+On branch master
+PS C:\workspace\geek - julius\secao04> dir
+
+
+    Diretório: C:\workspace\geek - julius\secao04
+
+
+Mode                 LastWriteTime         Length Name                                   
+----                 -------------         ------ ----
+-a----        20/10/2021     10:45              0 arquivo1j.html
+-a----        20/10/2021     11:08              1 arquivo1m.html
+
+
+PS C:\workspace\geek - julius\secao04> cd..
+PS C:\workspace\geek - julius> cd..
+PS C:\workspace> cd geek - maria
+Set-Location : Não é possível localizar um parâmetro posicional que aceite o argumento   
+'-'.
+No linha:1 caractere:1
++ cd geek - maria
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Location], ParameterBindingExce  
+   ption
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands  
+   .SetLocationCommand
+ 
+PS C:\workspace> cd "geek - maria"
+PS C:\workspace\geek - maria> cd secao04
+PS C:\workspace\geek - maria\secao04> dir
+
+
+    Diretório: C:\workspace\geek - maria\secao04
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        20/10/2021     10:55              0 arquivo1j.html
+-a----        20/10/2021     10:58              1 arquivo1m.html
+
+PS C:\workspace> dir
+
+
+    Diretório: C:\workspace
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        11/08/2021     11:24                .idea
+d-----        20/10/2021     10:17                geek - julius
+d-----        20/10/2021     10:53                geek - maria
+d-----        20/10/2021     11:03                geek - secao04_bare
+d-
+
+PS C:\workspace\geek - maria> cd secao04
+PS C:\workspace\geek - maria\secao04> dir
+Cloning into '.'...
+warning: You appear to have cloned an empty repository.
+done.
+PS C:\workspace\geek - maria\secao04> git config user.name "Maria Joaquina"
+PS C:\workspace\geek - maria\secao04> git config user.email "maria.joaquina@gmail.com"  
+PS C:\workspace\geek - maria\secao04> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        arquivo1m.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\workspace\geek - maria\secao04> git add arquivo1m.html
+PS C:\workspace\geek - maria\secao04> git commit -m "Adição do arquivo 1m"
+[master (root-commit) 6e6c29b] Adição do arquivo 1m
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 arquivo1j.html
+PS C:\workspace\geek - maria\secao04> git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 235 bytes | 78.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To C:\workspace\geek - secao04_bare
+ * [new branch]      master -> master
+PS C:\workspace\geek - maria\secao04> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+PS C:\workspace\geek - maria\secao04>
+
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+
+PS C:\workspace\geek - maria> cd secao04
+PS C:\workspace\geek - maria\secao04> git push
+To C:\workspace\geek - secao04_bare
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'C:\workspace\geek - secao04_bare'       
+hint: Updates were rejected because the remote contains work that you do    
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes   
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.  
+PS C:\workspace\geek - maria\secao04> git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 277 bytes | 14.00 KiB/s, done.
+From C:\workspace\geek - secao04_bare
+   6e6c29b..9eef895  master     -> origin/master
+Updating 6e6c29b..9eef895
+Fast-forward
+ arquivo1m.html | 1 +
+ 1 file changed, 1 insertion(+)   
+ create mode 100644 arquivo1m.html
+PS C:\workspace\geek - maria\secao04>
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+
+PS C:\workspace\geek - maria> git status
+fatal: not a git repository (or any of the parent directories): .git
+PS C:\workspace\geek - maria> cd secao04
+PS C:\workspace\geek - maria\secao04> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+PS C:\workspace\geek - maria\secao04> cd..
+PS C:\workspace\geek - maria> cd..
+PS C:\workspace> cd "geek - maria"
+PS C:\workspace\geek - maria> cd secao04
+PS C:\workspace\geek - maria\secao04> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+PS C:\workspace\geek - maria\secao04>
+
+PS C:\workspace\geek - maria\secao04> cd..
+PS C:\workspace\geek - maria> cd..
+PS C:\workspace> cd "geek - maria"
+PS C:\workspace\geek - maria> cd secao04
+PS C:\workspace\geek - maria\secao04> git status
+On branch master
+PS C:\workspace\geek - maria\secao04> dir
+
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

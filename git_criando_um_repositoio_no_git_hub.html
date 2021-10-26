@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>Criando um Repositorio no Github</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Criar um novo repositório no Github (ex. geek-git1)
+
+<a href="criando_novo_repositorio_github.png">Novo Repositório</a></td>
+
+No VSC File > Open Folder (mesmo nome criado no github)
+Criar novo arquivo README.md
+
+<a href="criando_novo_repositorio_github_2.png">Nova Pasta</a></td>
+
+Seguir a sequencia de comando abaixo
+
+<b><i>
+echo "# geek-git1" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/marcosdiasaugusto/geek-git1.git
+git push -u origin main
+</b></i>
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+<b><i>PS C:\workspace\geek-git1> dir</b></i>
+
+
+Mode                 LastWriteTime         Length Name                                   
+----                 -------------         ------ ----                                   
+-a----        21/10/2021     08:11             11 README.md                              
+
+<b><i>PS C:\workspace\geek-git1> git init</b></i>
+
+Initialized empty Git repository in C:/workspace/geek-git1/.git/</b></i>
+
+<b><i>PS C:\workspace\geek-git1> git config user.name "Marcos Dias"</b></i>
+<b><i>PS C:\workspace\geek-git1> git config user.email "maugustod@gmail.com"</b></i>
+<b><i>PS C:\workspace\geek-git1> git status</b></i>
+<b><i>On branch master</b></i>
+
+No commits yet
+
+Untracked files:
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>PS C:\workspace\geek-git1> git add README.md</b></i>
+<b><i>PS C:\workspace\geek-git1> git commit -m "Criaçao do arquivo README"</b></i>
+
+[master (root-commit) ac9a980] Criaçao do arquivo README
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+ 
+<b><i>PS C:\workspace\geek-git1> git push</b></i>
+
+fatal: The current branch master has no upstream branch.To push the current branch and set the remote as upstream, use    git push --set-upstream origin masterPS C:\workspace\geek-git1> git push -u origin master
+
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 240 bytes | 80.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/marcosdiasaugusto/geek-git1.git
+ * [new branch]      master -> master
+origin  https://github.com/marcosdiasaugusto/geek-git1.git (fetch)
+origin  https://github.com/marcosdiasaugusto/geek-git1.git (push)
+
+<b><i>PS C:\workspace\geek-git1> git status</b></i>
+
+On branch master
+Your branch is up to date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+nothing added to commit but untracked files present (use "git add" to track)
+<b><i>
+PS C:\workspace\geek-git1> git add novo.txt
+
+PS C:\workspace\geek-git1> git commit -m "Adicionando novo arquivo"
+</b></i>
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 novo.txt
+ 
+<b><i>PS C:\workspace\geek-git1> git push -u origin master</b></i>
+
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 286 bytes | 71.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+   ac9a980..487360e  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+<b><i>PS C:\workspace\geek-git1> git remote -v</b></i>
+
+origin  https://github.com/marcosdiasaugusto/geek-git1.git (fetch)
+origin  https://github.com/marcosdiasaugusto/geek-git1.git (push)
+
+<b><i>
+PS C:\workspace\geek-git1> git config credential.helper store
+PS C:\workspace\geek-git1> git status
+</b></i>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>PS C:\workspace\geek-git1> git add outro.txt</b></i>
+
+[master 503cac1] Adicionando outro arquivo
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 outro.txt
+ 
+<b><i>PS C:\workspace\geek-git1> git push -u origin master</b></i>
+
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 286 bytes | 95.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/marcosdiasaugusto/geek-git1.git
+   487360e..503cac1  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+<b><i>PS C:\workspace\geek-git1> git status</b></i>
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        maisum.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+<b><i>
+PS C:\workspace\geek-git1> git add maisum.txt
+PS C:\workspace\geek-git1> git commit -m "Adicionando mais um arquivo"     
+</b></i>
+[master f18cef6] Adicionando mais um arquivo
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 maisum.txt
+ <b><i>
+PS C:\workspace\geek-git1> git push -u origin master </b></i>
+
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 247 bytes | 123.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/marcosdiasaugusto/geek-git1.git
+   503cac1..f18cef6  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+PS C:\workspace\geek-git1> 
+
+<a href="criando_novo_repositorio_github_3.png">Github</a></td>
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

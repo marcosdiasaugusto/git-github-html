@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>Clone, push e pull</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+
+<b><i>PS C:\workspace\Aula04> git clone https://github.com/marcosdiasaugusto/geek-git1.git     </b></i>
+
+Cloning into 'geek-git1'...
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 10 (delta 2), reused 9 (delta 1), pack-reused 0
+Unpacking objects: 100% (10/10), 858 bytes | 10.00 KiB/s, done.
+
+<b><i>
+PS C:\workspace\Aula04> cd geek-git1
+PS C:\workspace\Aula04\geek-git1> dir
+</b></i>
+
+    Diretório: C:\workspace\Aula04\geek-git1
+
+
+Mode                 LastWriteTime         Length Name                                   
+----                 -------------         ------ ----                                   
+-a----        21/10/2021     09:23              0 maisum.txt                             
+-a----        21/10/2021     09:23              0 novo.txt                               
+-a----        21/10/2021     09:23              0 outro.txt                              
+-a----        21/10/2021     09:23             11 README.md                              
+
+
+<b><i>PS C:\workspace\Aula04\geek-git1> git status</b></i>
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+<b><i>PS C:\workspace\Aula04\geek-git1> git remote -v</b></i>
+
+origin  https://github.com/marcosdiasaugusto/geek-git1.git (fetch)
+origin  https://github.com/marcosdiasaugusto/geek-git1.git (push)
+<b><i>
+PS C:\workspace\Aula04\geek-git1> git config user.name "Marcos Dias"
+PS C:\workspace\Aula04\geek-git1> git config user.email "maugustod@gmail.com"
+PS C:\workspace\Aula04\geek-git1>
+</b></i>
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+
+<b><i>PS C:\workspace\Clone2> git clone https://github.com/marcosdiasaugusto/geek-git1.git</b></i>
+
+Cloning into 'geek-git1'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 10 (delta 2), reused 9 (delta 1), pack-reused 0
+Unpacking objects: 100% (10/10), 858 bytes | 11.00 KiB/s, done.
+<b><i>
+PS C:\workspace\Clone2> cd geek-git1
+PS C:\workspace\Clone2\geek-git1> git config user.name "Marcos Dias"
+PS C:\workspace\Clone2\geek-git1> git config user.name "Henrique Dias"      
+PS C:\workspace\Clone2\geek-git1> git config user.email "henriqued@gmail.com"
+PS C:\workspace\Clone2\geek-git1> git status
+</b></i>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+<b><i>PS C:\workspace\Clone2\geek-git1></b></i>
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+<b><i>
+PS C:\workspace\Aula04> cd geek-git1
+PS C:\workspace\Aula04\geek-git1> git status
+</b></i>
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+<b><i>PS C:\workspace\Aula04\geek-git1> git status</b></i>
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        um.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+<b><i>
+PS C:\workspace\Aula04\geek-git1> git add um.txt
+PS C:\workspace\Aula04\geek-git1> git commit -m "Adicionando arquivo um.txt"
+</b></i>
+[master a302cc0] Adicionando arquivo um.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 um.txt
+ 
+<b><i>PS C:\workspace\Aula04\geek-git1> git push -u origin master</b></i>
+
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 295 bytes | 98.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/marcosdiasaugusto/geek-git1.git
+   f18cef6..a302cc0  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+PS C:\workspace\Aula04\geek-git1>
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+<b><i>
+PS C:\workspace\Clone2> cd geek-git1
+PS C:\workspace\Clone2\geek-git1> git status
+</b></i>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+<b><i>
+PS C:\workspace\Clone2\geek-git1> git pull origin master
+</b></i>
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), 275 bytes | 15.00 KiB/s, done.
+From https://github.com/marcosdiasaugusto/geek-git1
+ * branch            master     -> FETCH_HEAD      
+   f18cef6..a302cc0  master     -> origin/master   
+Updating f18cef6..a302cc0
+Fast-forward
+ um.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 um.txt     
+ 
+PS C:\workspace\Clone2\geek-git1>
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+<b><i>
+PS C:\workspace\Aula04> cd geek-git1
+PS C:\workspace\Aula04\geek-git1> git status
+</b></i>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+<b><i>
+PS C:\workspace\Aula04\geek-git1> git status
+</b></i>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        dois.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+<b><i>
+PS C:\workspace\Aula04\geek-git1> git add dois.txt
+PS C:\workspace\Aula04\geek-git1> git commit -m "Adicionando arquivo dois.txt"
+</b></i>
+[master ae8ec56] Adicionando arquivo dois.txt   
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 dois.txt
+<b><i> 
+PS C:\workspace\Aula04\geek-git1> git push -u origin master
+</b></i>
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.    
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 246 bytes | 82.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/marcosdiasaugusto/geek-git1.git
+   a302cc0..ae8ec56  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+PS C:\workspace\Aula04\geek-git1>
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+<b><i>
+PS C:\workspace\Clone2> cd geek-git1
+</b></i>
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 2 (delta 1), reused 2 (delta 1), pack-reused 0
+Unpacking objects: 100% (2/2), 226 bytes | 15.00 KiB/s, done.
+From https://github.com/marcosdiasaugusto/geek-git1
+ * branch            master     -> FETCH_HEAD
+   a302cc0..ae8ec56  master     -> origin/master
+Updating a302cc0..ae8ec56
+Fast-forward
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 dois.txt
+<b><i> 
+PS C:\workspace\Clone2\geek-git1> git status
+</b></i>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        tres.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+<b><i>
+PS C:\workspace\Clone2\geek-git1> git add tres.txt
+PS C:\workspace\Clone2\geek-git1> git commit -m "Adicionando arquivo tres.txt"
+</b></i>
+[master 4b4c658] Adicionando arquivo tres.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 tres.txt
+ <b><i>
+PS C:\workspace\Clone2\geek-git1> git push -u origin master
+</b></i>
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 294 bytes | 98.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/marcosdiasaugusto/geek-git1.git
+   ae8ec56..4b4c658  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+<b><i>
+PS C:\workspace\Clone2\geek-git1> git remote -v
+</b></i>
+origin  https://github.com/marcosdiasaugusto/geek-git1.git (fetch)
+origin  https://github.com/marcosdiasaugusto/geek-git1.git (push)
+
+PS C:\workspace\Clone2\geek-git1>
+
+
+<a href="fazendo_uso_clone_pull_push.png">fazendo_uso_clone_pull_push</a>
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

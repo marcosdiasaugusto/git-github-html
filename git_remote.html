@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git remote</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Repositório Remoto
+
+Exibir os repositórios remotos
+
+git remote
+
+git remote -v
+
+Vincular repositório local com um repositório remoto
+
+git remote add origin git@github.com:leocomelli/curso-git.git
+
+Exibir informações dos repositórios remotos
+
+git remote show origin
+
+Renomear um repositório remoto
+
+git remote rename origin curso-git
+
+Desvincular um repositório remoto
+
+git remote rm curso-git
+
+Por gentileza, se possível, teria como adicionar o comando, para altear a url do git remote:
+
+git remote set-url origin git@github.com:leocomelli/outro-curso-git.git
+-------------------------------------------------------------------------------------
+Adicionando um remote
+
+Para adicionar um novo remote, use o comando git remote add no terminal, no diretório em que seu repositório 
+está armazenado.
+
+O comando git remote add leva dois argumentos:
+
+1. Um nome remote, por exemplo, origem
+2. Um URL remoto, por exemplo, https: // <your-git-service-address> /user/repo.git
+
+ git remote add origin https: // <your-git-service-address> /owner/repository.git
+ 
+NOTA: Antes de adicionar o remote, você deve criar o repositório necessário em seu serviço git. Você será capaz de
+push / pull commits após adicionar seu remote.
+
+<a href="git_criando_um_repositoio_no_git_hub.html">Novo Repositorio Github</a>
+<a href="trabalhando com issues.PNG">Tralhando Issues</a>
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

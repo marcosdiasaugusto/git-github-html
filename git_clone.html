@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git clone</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Clone um repositório
+
+O comando git clone é usado para copiar um repositório Git existente de um servidor para a máquina local.
+
+Por exemplo, para clonar um projeto GitHub:
+
+cd <caminho onde você gostaria que o clone criasse um diretório>
+
+git clone https://github.com/username/projectname.git
+
+Para clonar um projeto BitBucket:
+
+cd <caminho onde você gostaria que o clone criasse um diretório>
+
+git clone https: //yourusername@bitbucket.org/username/projectname.git
+
+Isso cria um diretório chamado projectname na máquina local, contendo todos os arquivos no Git remoto
+repositório. Isso inclui arquivos de origem para o projeto, bem como um subdiretório .git que contém todo o
+histórico e configuração do projeto.
+
+Para especificar um nome diferente do diretório, por exemplo, Minha pasta:
+
+git clone https://github.com/username/projectname.git MyFolder
+
+Ou para clonar no diretório atual:
+
+git clone https://github.com/username/projectname.git.
+
+Observação:
+
+1. Ao clonar para um diretório especificado, o diretório deve estar vazio ou inexistente.
+2. Você também pode usar a versão ssh do comando:
+
+git clone git@github.com: username / projectname.git
+
+A versão https e a versão ssh são equivalentes. No entanto, alguns serviços de hospedagem, como o GitHub, recomendam
+que você usa https em vez de ssh.
+
+-*-
+PS C:\workspace> dir
+
+
+    Diretório: C:\workspace
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        20/10/2021     06:21                geek - secao_4
+d-----        20/10/2021     07:28                geek - secao_4_Henrique
+d-----        17/08/2020     01:20                genesis-dio-master
+
+PS C:\workspace\geek - secao_4_Henrique> dir
+PS C:\workspace\geek - secao_4_Henrique> git clone "C:\workspace\geek - secao_4" .  
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique
+$ git clone "c:\workspace\geek - secao_4" .
+Cloning into '.'...
+done.
+  
+
+PS C:\workspace\geek - secao_4_Henrique> dir
+
+
+    Diretório: C:\workspace\geek - secao_4_Henrique
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        20/10/2021     07:42              8 .gitignore
+-a----        20/10/2021     07:42              0 arquivoB.html
+-a----        20/10/2021     07:42              0 arquivoC.html
+
+
+PS C:\workspace\geek - secao_4_Henrique> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+
+PS C:\workspace\geek - secao_4_Henrique> git config user.name "Henrique Teixeira Dias"         
+PS C:\workspace\geek - secao_4_Henrique> git config user.email "Henry@gmail.com"         
+
+C:\workspace\geek - secao_4_Henrique>dir
+ O volume na unidade C não tem nome.
+ O Número de Série do Volume é 4A7B-104F
+
+ Pasta de C:\workspace\geek - secao_4_Henrique
+
+20/10/2021  07:42    <DIR>          .
+20/10/2021  07:42    <DIR>          ..
+20/10/2021  07:42                 8 .gitignore
+20/10/2021  07:42                 0 arquivo1.html
+20/10/2021  07:42                 0 arquivoB.html
+20/10/2021  07:42                 0 arquivoC.html
+               4 arquivo(s)              8 bytes
+               2 pasta(s)   48.879.669.248 bytes disponíveis
+
+C:\workspace\geek - secao_4_Henrique>copy con novoarquivo.html
+^Z
+        1 arquivo(s) copiado(s).
+
+C:\workspace\geek - secao_4_Henrique>
+ 
+PS C:\workspace\geek - secao_4_Henrique> dir
+
+
+    Diretório: C:\workspace\geek - secao_4_Henrique
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        20/10/2021     07:42              8 .gitignore
+20/10/2021  07:42                 0 arquivo1.html
+-a----        20/10/2021     07:42              0 arquivoB.html
+-a----        20/10/2021     07:42              0 arquivoC.html
+-a----        20/10/2021     07:50              0 novoarquivo.html
+
+
+PS C:\workspace\geek - secao_4_Henrique> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        novoarquivo.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+PS C:\workspace\geek - secao_4_Henrique> git add novoarquivo.html
+
+PS C:\workspace\geek - secao_4_Henrique> git status
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   novoarquivo.html
+
+PS C:\workspace\geek - secao_4_Henrique> git commit -m "Adicionando novo arquivo"        
+[master 139228e] Adicionando novo arquivo
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 novoarquivo.html
+PS C:\workspace\geek - secao_4_Henrique> git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+PS C:\workspace\geek - secao_4_Henrique> 
+
+<td><a href="git_fazendo_uso_clone_push_pull.html">Fazendo Uso Clone Push Pull</a></td>
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

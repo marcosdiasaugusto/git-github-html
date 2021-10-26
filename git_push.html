@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git push</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Enviar arquivos/diretórios para o repositório remoto
+
+O primeiro push de um repositório deve conter o nome do repositório remoto e o branch.
+
+git push -u origin master
+
+Os demais pushes não precisam dessa informação
+
+git push
+
+---------------------------------------------------------------------------------------------------------------------
+Código de compartilhamento
+
+Para compartilhar seu código, você cria um repositório em um servidor remoto para o qual copiará seu repositório local.
+
+Para minimizar o uso de espaço no servidor remoto, você cria um repositório vazio: um que tem apenas o .git
+objetos e não cria uma cópia de trabalho no sistema de arquivos. Como um bônus, você configurou este controle remoto 
+como um servidor upstream para compartilhar atualizações facilmente com outros programadores.
+
+No servidor remoto:
+
+git init --bare /path/to/repo.git
+
+Na máquina local:
+
+git remote add origin ssh: // username @ server: /path/to/repo.git
+
+(Observe que ssh: é apenas uma forma possível de acessar o repositório remoto.)
+
+Agora copie seu repositório local para o remoto:
+
+git push --set-upstream origin master
+
+Adicionar --set-upstream (ou -u) criou uma referência upstream (rastreamento) que é usada pelo Git sem argumentos
+comandos, por exemplo git pull.
+
+<a href="git_criando_um_repositoio_no_git_hub.html">Novo Repositorio Github</a>
+
+<td><a href="git_tag.html">git tag</a></td>
+<td><a href="git_branch.html">git branch</a></td>
+<td><a href="git_fazendo_uso_clone_push_pull.html">Fazendo Uso Clone Push Pull</a></td>
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

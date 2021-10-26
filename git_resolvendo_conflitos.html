@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>Resolvendo Conflitos</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+-------------------------------------
+PS C:\workspace\geek-git1> git status
+-------------------------------------
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+-------------------------------------
+PS C:\workspace\geek-git1> git status
+-------------------------------------
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   novo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+-------------------------------------
+PS C:\workspace\geek-git1> git add novo.txt
+PS C:\workspace\geek-git1> git commit -m "Novas alterações aqui"
+-------------------------------------
+[master 89a48c6] Novas alterações aqui
+ 1 file changed, 1 insertion(+)      
+------------------------------------- 
+PS C:\workspace\geek-git1> git push -u origin master
+-------------------------------------
+To https://github.com/marcosdiasaugusto/geek-git1.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/marcosdiasaugusto/geek-git1.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+-------------------------------------
+PS C:\workspace\geek-git1>
+PS C:\workspace\geek-git1> git pull origin master
+-------------------------------------
+remote: Enumerating objects: 24, done.
+remote: Counting objects: 100% (24/24), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 22 (delta 8), reused 18 (delta 4), pack-reused 0
+Unpacking objects: 100% (22/22), 1.92 KiB | 12.00 KiB/s, done.
+From https://github.com/marcosdiasaugusto/geek-git1
+ * branch            master     -> FETCH_HEAD
+   f18cef6..e36545d  master     -> origin/master
+Auto-merging novo.txt
+CONFLICT (content): Merge conflict in novo.txt
+Automatic merge failed; fix conflicts and then commit the result.
+-------------------------------------
+PS C:\workspace\geek-git1> git status
+-------------------------------------
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 8 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   dois.txt
+        new file:   tres.txt
+        new file:   um.txt
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   novo.txt
+
+-------------------------------------
+PS C:\workspace\geek-git1>
+PS C:\workspace\geek-git1> git add novo.txt
+PS C:\workspace\geek-git1> git commit -m "Correções de conflitos corrigidas"
+-------------------------------------
+[master 02b64a3] Correções de conflitos corrigidas
+-------------------------------------
+PS C:\workspace\geek-git1> git status
+-------------------------------------
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+-------------------------------------
+PS C:\workspace\geek-git1> git push -u origin master
+-------------------------------------
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 607 bytes | 151.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/marcosdiasaugusto/geek-git1.git
+   e36545d..02b64a3  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+PS C:\workspace\geek-git1>
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

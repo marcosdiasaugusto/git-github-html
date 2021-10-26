@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git rebase</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+<b><i>Trabalhalndo com rebase</b></i>
+
+<b><i>> git status</b></i>
+
+On branch master
+<b><i>> git branch</b></i>
+
+<b><i>> git checkout -b funcionalidadeC</b></i>
+
+Switched to a new branch 'funcionalidadeC'
+
+<b><i>> git branch</b></i>
+
+* funcionalidadeC
+  master
+  
+<b><i>> git status</b></i>
+
+On branch funcionalidadeC
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        arquivoC.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>> git add arquivoC.html</b></i>
+
+<b><i>> git commit -m "Criação do arquivo C"</b></i>
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+<b><i>> git status</b></i>
+
+On branch funcionalidadeC
+nothing to commit, working tree clean
+
+<b><i>> git checkout master</b></i>
+
+Switched to branch 'master'
+
+<b><i>> git branch</b></i>
+
+  funcionalidadeC
+* master
+
+<b><i>> git checkout funcionalidadeC</b></i>
+
+Switched to branch 'funcionalidadeC'
+
+<b><i>> dir</b></i>
+
+----                 -------------         ------ ----
+-a----        19/10/2021     15:08              0 arquivo1.html
+-a----        20/10/2021     05:43              0 arquivoB.html
+-a----        19/10/2021     14:57              0 info.txt
+
+
+<b><i>> git checkout master</b></i>
+
+Switched to branch 'master'
+
+<b><i>> dir</b></i>
+
+    Diretório: C:\workspace\geek - secao_4
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        19/10/2021     14:58              8 .gitignore
+-a----        20/10/2021     05:43              0 arquivoB.html
+
+
+<b><i>> git branch</b></i>
+
+  funcionalidadeC
+* master
+
+<b><i>> git rebase funcionalidadeC</b></i>
+
+Successfully rebased and updated refs/heads/master.
+
+<b><i>> git status</b></i>
+
+On branch master
+nothing to commit, working tree clean
+
+<b><i>> dir</b></i>
+
+    Diretório: C:\workspace\geek - secao_4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        19/10/2021     14:58              8 .gitignore
+-a----        19/10/2021     15:08              0 arquivo1.html
+-a----        20/10/2021     05:43              0 arquivoB.html
+-a----        20/10/2021     06:21              0 arquivoC.html
+-a----        19/10/2021     14:57              0 info.txt
+
+
+<b><i>> git checkout funcionalidadeC</b></i>
+
+Switched to branch 'funcionalidadeC'
+
+<b><i>> dir</b></i>
+
+
+    Diretório: C:\workspace\geek - secao_4
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        19/10/2021     14:58              8 .gitignore
+-a----        19/10/2021     15:08              0 arquivo1.html
+-a----        20/10/2021     05:43              0 arquivoB.html
+-a----        19/10/2021     14:57              0 info.txt
+
+<b><i>> git log</b></i>
+
+Author: Marcos Dias <maugustod@gmail.com>
+Date:   Wed Oct 20 06:15:18 2021 -0300
+
+    Criação do arquivo C
+
+commit 0f10913ee60eb865615340706e6c222c42daa77b
+Author: Marcos Dias <maugustod@gmail.com>
+Date:   Tue Oct 19 15:43:56 2021 -0300
+
+    implementação da funcionalidadeB
+
+commit 2682a71ce01f3eb8c4295a62cc64d8cbc1e8f155
+Author: Marcos Dias <maugustod@gmail.com>
+Date:   Tue Oct 19 15:10:40 2021 -0300
+
+    Primeiro arquivo do projeto
+
+commit c584d2fbe453a676f63e8a5bd88ad06ca09bb21c
+Author: Marcos Dias <maugustod@gmail.com>
+Date:   Tue Oct 19 15:01:14 2021 -0300
+
+    Ignorando arquivos texto
+	
+<b><i>> git branch</b></i>
+
+* funcionalidadeC
+  master
+  
+<b><i>> git checkout master</b></i>
+
+Switched to branch 'master'
+
+<b><i>> git log</b></i>
+
+commit 6dd0b7a0b9a517f36731805a2258760d2257e08d (HEAD -> master, funcionalidadeC)
+Author: Marcos Dias <maugustod@gmail.com>
+Date:   Wed Oct 20 06:15:18 2021 -0300
+
+    Criação do arquivo C
+
+commit 0f10913ee60eb865615340706e6c222c42daa77b
+Author: Marcos Dias <maugustod@gmail.com>
+Date:   Tue Oct 19 15:43:56 2021 -0300
+
+    implementação da funcionalidadeB
+
+commit 2682a71ce01f3eb8c4295a62cc64d8cbc1e8f155
+Author: Marcos Dias <maugustod@gmail.com>
+Date:   Tue Oct 19 15:10:40 2021 -0300
+
+    Primeiro arquivo do projeto
+
+commit c584d2fbe453a676f63e8a5bd88ad06ca09bb21c
+Author: Marcos Dias <maugustod@gmail.com>
+Date:   Tue Oct 19 15:01:14 2021 -0300
+
+    Ignorando arquivos texto
+PS C:\workspace\geek - secao_4> 
+
+	</pre>
+	
+	<a href="git-github.html">Git-Github</a>
+</body>
+</html>

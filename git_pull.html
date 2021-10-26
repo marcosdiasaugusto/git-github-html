@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git pull</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Atualizar repositório local de acordo com o repositório remoto
+
+Atualizar os arquivos no branch atual
+
+git pull
+
+Buscar as alterações, mas não aplica-las no branch atual
+git fetch
+
+-*-
+
+PS C:\workspace> cd "geek - secao_4"
+nothing to commit, working tree clean
+PS C:\workspace\geek - secao_4> git branch
+  funcionalidadeC
+PS C:\workspace\geek - secao_4> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        arquivo2.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\workspace\geek - secao_4> git add arquivo2.html
+PS C:\workspace\geek - secao_4> git commit -m "Adicionando arquivo 2"
+[master 45f7470] Adicionando arquivo 2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 arquivo2.html
+PS C:\workspace\geek - secao_4> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\workspace\geek - secao_4> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        arquivo3.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\workspace\geek - secao_4> git add arquivo3.html
+PS C:\workspace\geek - secao_4> git commit -m "Adicionando arquivo 3" 
+[master b62bbcd] Adicionando arquivo 3
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 arquivo3.html
+PS C:\workspace\geek - secao_4> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\workspace\geek - secao_4> 
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique (master)
+$ dir
+arquivo1.html  arquivoB.html  arquivoC.html  novoarquivo.html
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique (master)
+$ git fech
+git: 'fech' is not a git command. See 'git --help'.
+
+The most similar command is
+        fetch
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique (master)
+$ git fetch
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), 219 bytes | 16.00 KiB/s, done.
+From c:\workspace\geek - secao_4
+   6dd0b7a..45f7470  master     -> origin/master
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique (master)
+$ dir
+arquivo1.html  arquivoB.html  arquivoC.html  novoarquivo.html
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique (master)
+$ git rebase
+Successfully rebased and updated refs/heads/master.
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique (master)
+$ dir
+arquivo1.html  arquivo2.html  arquivoB.html  arquivoC.html  novoarquivo.html
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique (master)
+$
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique (master)
+$ git pull
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), 220 bytes | 18.00 KiB/s, done.
+From c:\workspace\geek - secao_4
+   45f7470..b62bbcd  master     -> origin/master
+Merge made by the 'recursive' strategy.
+ arquivo3.html | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 arquivo3.html
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique (master)
+$ dir
+arquivo1.html  arquivo3.html  arquivoC.html
+arquivo2.html  arquivoB.html  novoarquivo.html
+
+Marcos@MARCOS-DELL MINGW64 /c/workspace/geek - secao_4_Henrique (master)
+
+<td><a href="git_fazendo_uso_clone_push_pull.html">Fazendo Uso Clone Push Pull</a></td>
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

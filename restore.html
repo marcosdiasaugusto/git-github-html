@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>amend</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+<h3>*** tirando arquivo do staged ***</h3>
+
+<b><i>*** inserindo novo arquivo no projeto ***</i></b>
+
+
+
+<b><i>> git status</i></b>
+On branch master
+<b><i>        CalculosTrimSemAno.txt</i></b>
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>*** inserindo novo arquivo no staged ***</i></b>
+
+<b><i>> git add CalculosTrimSemAno.txt
+
+<b><i>> git status</i></b>
+
+On branch master
+  (use "git restore --staged <file>..." to unstage)
+        new file:   CalculosTrimSemAno.txt
+
+<b><i>*** retirando novo arquivo do staged ***</i></b>
+Não queremos que esse arquivo entre no próximo commit, voltar ao estagio anterior 
+Tiramos o arquivo do monitoramento.
+
+
+> git restore --staged CalculosTrimSemAno.txt
+> git status
+</i></b>
+
+On branch master
+        CalculosTrimSemAno.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>> git status</i></b>
+
+On branch master
+<b><i>        CalculosTrimSemAno.txt</b></i>
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>> git add CalculosTrimSemAno.txt</i></b>
+<b><i>> git status</i></b>
+
+On branch master
+  (use "git restore --staged <file>..." to unstage)
+        new file:   CalculosTrimSemAno.txt
+
+<b><i>> git restore --staged CalculosTrimSemAno.txt
+> git status
+</b></i>
+On branch master
+  (use "git add <file>..." to include in what will be committed)
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>> git status</i></b>
+
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>> git checkout CalculosTrimSemAno.txt</i></b>
+error: pathspec 'CalculosTrimSemAno.txt' did not match any file(s) known to git
+
+<b><i>> git status</i></b>
+
+On branch master
+  (use "git add <file>..." to include in what will be committed)
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>> git add CalculosTrimSemAno.txt
+> git status
+</b></i>
+On branch master
+        new file:   CalculosTrimSemAno.txt
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

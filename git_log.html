@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git log</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Visualizar histórico
+
+Exibir histórico
+
+git log
+
+Exibir histórico com diff das duas últimas alterações
+
+git log -p -2
+
+Exibir resumo do histórico (hash completa, autor, data, comentário e qtde de alterações (+/-))
+
+git log --stat
+
+Exibir informações resumidas em uma linha (hash completa e comentário)
+
+git log --pretty=oneline
+
+Exibir histórico com formatação específica (hash abreviada, autor, data e comentário)
+
+git log --pretty=format:"%h - %an, %ar : %s"
+
+%h: Abreviação do hash;
+%an: Nome do autor;
+%ar: Data;
+%s: Comentário.
+
+Verifique as demais opções de formatação no Git Book
+
+Exibir histório de um arquivo específico
+
+git log -- <caminho_do_arquivo>
+
+Exibir histórico de um arquivo específico que contêm uma determinada palavra
+
+git log --summary -S<palavra> [<caminho_do_arquivo>]
+
+Exibir histórico modificação de um arquivo
+
+git log --diff-filter=M -- <caminho_do_arquivo>
+
+O pode ser substituido por: Adicionado (A), Copiado (C), Apagado (D), Modificado (M), 
+Renomeado (R), entre outros.
+
+Exibir histório de um determinado autor
+
+git log --author=usuario
+
+Exibir revisão e autor da última modificação de uma bloco de linhas
+
+git blame -L 12,22 meu_arquivo.txt 
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

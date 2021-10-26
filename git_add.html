@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git add</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Adicionar arquivo/diretório (staged area)
+
+Adicionar um arquivo em específico
+
+git add meu_arquivo.txt
+
+Adicionar um diretório em específico
+
+git add meu_diretorio
+
+Adicionar todos os arquivos/diretórios
+
+git add .	
+
+Adicionar um arquivo que esta listado no .gitignore (geral ou do repositório)
+
+git add -f arquivo_no_gitignore.txt
+
+Revise a lista de arquivos resultante; você pode dizer ao Git quais arquivos colocar no controle de versão 
+(evite adicionar arquivos com informações confidenciais, como senhas ou arquivos que apenas bagunçam o repositório):
+
+git add <nome do arquivo / diretório # 1> <nome do arquivo / diretório # 2> <...>
+
+Se todos os arquivos da lista devem ser compartilhados com todos que têm acesso ao repositório, um único comando irá 
+adicionar tudo em seu diretório atual e seus subdiretórios:
+
+git add .
+
+Isso irá "preparar" todos os arquivos a serem adicionados ao controle de versão, preparando-os para serem submetidos 
+em seu primeiro commit.
+Para arquivos que você deseja que nunca estejam sob controle de versão, crie e preencha um arquivo chamado .gitignore antes de executar
+o comando add.
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

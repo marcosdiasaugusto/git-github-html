@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>amend</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+<h3>Alteração texto commit digitado incorretamente:</h3>
+
+<b><i>git commit -m "bla bla bla"</i></b>
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS E:\projetos\BancosProcessamento> git status
+On branch master
+
+<b><i>git log --oneline</i></b>
+
+<b><i>db92496 (HEAD -> master) bla bla bla</i></b>
+1e3fb89 deletado arquivo trataDict.txt do projeto
+4a34160 renomeado arquivo santander.txt -> st.txt
+0fc9fb4 renomeado arquivo st.txt -> santander.txt
+1e85755 identação do arquivo ExecucaoDasRotinasDesenvolvidas.txt
+3109b2c commit inicial Bancos Processamento
+
+<b><i>git commit --amend -m "Inclusão texto explicativo."</i></b>
+
+[master 356420b] Inclusão texto explicativo.
+ Date: Tue Oct 19 06:06:24 2021 -0300
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+<b><i>git log --oneline        </i></b>                            
+
+<b><i>356420b (HEAD -> master) Inclusão texto explicativo.</i></b>
+1e3fb89 deletado arquivo trataDict.txt do projeto
+4a34160 renomeado arquivo santander.txt -> st.txt
+0fc9fb4 renomeado arquivo st.txt -> santander.txt
+1e85755 identação do arquivo ExecucaoDasRotinasDesenvolvidas.txt
+3109b2c commit inicial Bancos Processamento
+
+
+
+<h3>Adicionando alterações no mesmo commit</h3>
+
+<b><i>> git status</i></b>
+
+On branch master
+Changes not staged for commit:
+  (use "git restore <file>..." to discard changes in working directory)
+<b><i>        modified:   st.txt</b></i>
+no changes added to commit (use "git add" and/or "git commit -a")
+
+<b><i>> git add st.txt</i></b>
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   st.txt
+
+<b><i>> git commit -m "Inclusão de linha de espaçamento."    </i></b>
+
+[master 399b79e] Inclusão de linha de espaçamento.
+ 1 file changed, 1 insertion(+)
+
+<b><i>> git status</i></b>                                           
+
+<b><i>Criando um novo arquivo no projeto ListaArqsDiretório</i></b>
+
+<b><i>> git status</i></b>
+
+  On branch master
+  (use "git add <file>..." to include in what will be committed)        ListaArqDiretorio.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>
+> git add ListaArqDiretorio.txt
+> git status
+</b></i>
+On branch master
+Changes to be committed:
+        new file:   ListaArqDiretorio.txt
+
+<b><i>> git log --oneline</i></b>
+
+399b79e (HEAD -> master) Inclusão de linha de espaçamento.
+356420b Inclusão texto explicativo.
+1e3fb89 deletado arquivo trataDict.txt do projeto
+4a34160 renomeado arquivo santander.txt -> st.txt
+0fc9fb4 renomeado arquivo st.txt -> santander.txt
+1e85755 identação do arquivo ExecucaoDasRotinasDesenvolvidas.txt
+3109b2c commit inicial Bancos Processamento
+
+<b><i>> git commit --amend -m "Inclusao novo arquivo no projeto ListaArqDiretorio.txt"</i></b>
+
+[master c764daf] Inclusao novo arquivo no projeto ListaArqDiretorio.txt
+ Date: Tue Oct 19 06:28:05 2021 -0300
+ 2 files changed, 1 insertion(+)
+ create mode 100644 ListaArqDiretorio.txt
+
+<b><i>> git status</i></b>
+On branch master
+
+nothing to commit, working tree clean</i></b>
+
+<b><i>> git log --one</i></b>
+
+linec764daf (HEAD -> master) Inclusao novo arquivo no projeto ListaArqDiretorio.txt
+356420b Inclusão texto explicativo.
+1e3fb89 deletado arquivo trataDict.txt do projeto
+4a34160 renomeado arquivo santander.txt -> st.txt
+0fc9fb4 renomeado arquivo st.txt -> santander.txt
+1e85755 identação do arquivo ExecucaoDasRotinasDesenvolvidas.txt
+3109b2c commit inicial Bancos Processamento
+
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git checkout</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Desfazendo operações
+
+Desfazendo alteração local (working directory)
+
+Este comando deve ser utilizando enquanto o arquivo não foi adicionado na staged area.
+
+git checkout -- meu_arquivo.txt
+
+Desfazendo alteração local (staging area)
+
+Este comando deve ser utilizando quando o arquivo já foi adicionado na staged area.
+
+git reset HEAD meu_arquivo.txt
+
+Se o resultado abaixo for exibido, o comando reset não alterou o diretório de trabalho.
+
+Unstaged changes after reset:
+
+M	meu_arquivo.txt
+
+A alteração do diretório pode ser realizada através do comando abaixo:
+
+git checkout meu_arquivo.txt
+
+Arquivos não monitorados
+
+Se o arquivo foi modificado mas você ainda não executou git add, um simples git checkout 
+removerá as alterações, deixando o arquivo como ele estava no último commit. Passe o nome 
+do arquivo a ter as alterações desfeitas ou . para desfazer as alterações em todos os 
+arquivos modificados. Muito útil se você está apenas experimentando um código mas não quer 
+que ele seja salvo.
+
+git checkout .
+
+Esse comando não apaga novos arquivos. Para apagar novos arquivos que ainda não foram 
+adicionados ao Stage, execute:
+
+git clean -df
+
+<a href="checkout.html">checkout</a></td>
+<a href="git_branch.html">git branch</a></td>
+<a href="git_rebase.html">git rebase</a></td>
+<a href="git_desfazendo_checkouts.html">Desfazendo Checkouts</a>
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

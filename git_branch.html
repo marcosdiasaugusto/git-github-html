@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git branch</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Branches
+
+O master é o branch principal do GIT.
+
+O HEAD é um ponteiro especial que indica qual é o branch atual. Por padrão, o HEAD aponta 
+para o branch principal, o master.
+
+Criando um novo branch
+
+git branch bug-123
+
+Trocando para um branch existente
+
+git checkout bug-123
+
+Neste caso, o ponteiro principal HEAD esta apontando para o branch chamado bug-123.
+
+Criar um novo branch e trocar
+
+git checkout -b bug-456
+
+Voltar para o branch principal (master)
+
+git checkout master
+
+Resolver merge entre os branches
+
+git merge bug-123
+
+Para realizar o merge, é necessário estar no branch que deverá receber as alterações. 
+O merge pode automático ou manual. O merge automático será feito em arquivos textos que 
+não sofreram alterações nas mesmas linhas, já o merge manual será feito em arquivos textos 
+que sofreram alterações nas mesmas linhas.
+
+A mensagem indicando um merge manual será:
+
+Automerging meu_arquivo.txt
+
+CONFLICT (content): Merge conflict in meu_arquivo.txt
+
+Automatic merge failed; fix conflicts and then commit the result.
+
+Apagando um branch
+
+git branch -d bug-123
+
+Listar branches
+
+git branch
+
+Listar branches com informações dos últimos commits
+
+git branch -v
+
+Listar branches que já foram fundidos (merged) com o master
+
+git branch --merged
+
+Listar branches que não foram fundidos (merged) com o master
+
+git branch --no-merged
+
+Criando branches no repositório remoto
+
+Criando um branch remoto com o mesmo nome
+
+git push origin bug-123
+
+Criando um branch remoto com nome diferente
+
+git push origin bug-123:new-branch
+
+Baixar um branch remoto para edição
+
+git checkout -b bug-123 origin/bug-123
+
+Apagar branch remoto
+
+git push origin:bug-123
+-*-
+
+<b><i>> git init</b></i>
+Initialized empty Git repository in C:/workspace/geek - secao_4/.git/
+<b><i>
+> git config user.name "Marcos Dias"
+> git config user.email "maugustod@gmail.com"
+> git status
+</b></i>
+On branch master
+No commits yet
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        info.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+<h3>criacao do arquivo .gitignore e inclusao info.txt</h3>
+
+<b><i>> git status</b></i>
+
+On branch master
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>> git commit -m "Ignorando arquivos texto" </b></i>
+
+[master (root-commit) c584d2f] Ignorando arquivos texto
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+<b><i>> git status</b></i>
+
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        arquivo1.html
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>> git add arquivo1.html</b></i>
+
+<b><i>> git commit -m "Primeiro arquivo do projeto"</b></i>
+
+[master 2682a71] Primeiro arquivo do projeto
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+<b><i>> git branch
+> git status
+</b></i>
+
+nothing to commit, working tree clean
+<b><i>> git branch funcionalidadeA</b></i>
+
+  funcionalidadeA
+* master
+
+<b><i>> git checkout funcionalidadeA</b></i>
+
+Switched to branch 'funcionalidadeA'
+
+<b><i>> git branch</b></i>
+
+* funcionalidadeA
+  master
+
+<b><i>> dir</b></i>
+
+
+    Diretório: C:\workspace\geek - secao_4
+
+Mode                 LastWriteTime         Length Name
+-a----        19/10/2021     14:58              8 .gitignore
+-a----        19/10/2021     15:08              0 arquivo1.html
+
+
+<b><i>> git checkout master</b></i>
+
+Switched to branch 'master'
+
+<b><i>> git branch</b></i>
+
+  funcionalidadeA
+* master
+
+<b><i>> dir</b></i>
+
+
+    Diretório: C:\workspace\geek - secao_4
+
+Mode                 LastWriteTime         Length Name
+-a----        19/10/2021     14:58              8 .gitignore
+-a----        19/10/2021     15:08              0 arquivo1.html
+
+
+<b><i>> git checkout funcionalidadeA</b></i>
+
+Switched to branch 'funcionalidadeA'
+PS C:\workspace\geek - secao_4> git branch
+* funcionalidadeA
+  master
+
+<b><i>> dir</b></i>
+
+    Diretório: C:\workspace\geek - secao_4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        19/10/2021     14:58              8 .gitignore
+-a----        19/10/2021     15:08              0 arquivo1.html
+-a----        19/10/2021     14:57              0 info.txt
+
+<b><i>> git commit -m "Implementação da funcionalidadeA"</b></i>
+
+[funcionalidadeA c3cd3b2] Implementação da funcionalidadeA
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 arquivoA.hml
+
+<b><i>> git status</b></i>
+
+On branch funcionalidadeA
+nothing to commit, working tree clean
+
+<b><i>> git checkout master</b></i>
+
+Switched to branch 'master'
+
+<b><i>> git branch</b></i>
+
+  funcionalidadeA
+* master
+
+<b><i>> dir</b></i>
+
+----                 -------------         ------ ----                                   
+-a----        19/10/2021     14:58              8 .gitignore                             
+-a----        19/10/2021     15:08              0 arquivo1.html                          
+-a----        19/10/2021     14:57              0 info.txt                               
+
+
+<b><i>> git checkout funcionalidadeA</b></i>
+
+Switched to branch 'funcionalidadeA'
+<b><i>> dir</b></i>
+
+    Diretório: C:\workspace\geek - secao_4
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        19/10/2021     14:58              8 .gitignore
+-a----        19/10/2021     15:38              0 arquivoA.hml
+-a----        19/10/2021     14:57              0 info.txt
+
+
+Switched to branch 'master'
+  funcionalidadeA
+* master
+
+<b><i>> dir</b></i>
+
+    Diretório: C:\workspace\geek - secao_4
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        19/10/2021     15:08              0 arquivo1.html
+-a----        19/10/2021     14:57              0 info.txt
+
+
+<b><i>> git branch funcionalidadeB
+> git branch
+</b></i>
+
+* master
+<b><i>> git checkouth funcionalidadeB     </b></i>
+
+git: 'checkouth' is not a git command. See 'git --help'.
+The most similar command is
+        checkout
+Switched to branch 'funcionalidadeB'
+  funcionalidadeA
+* funcionalidadeB
+  master
+On branch funcionalidadeB
+Untracked files:
+        arquivoB.html
+nothing added to commit but untracked files present (use "git add" to track)
+
+<b><i>> git commit -m "implementação da funcionalidadeB"</b></i>
+
+On branch funcionalidadeB
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        arquivoB.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+<b><i>
+> git add arquivoB.html
+> git commit -m "implementação da funcionalidadeB"
+</b></i>
+
+[funcionalidadeB 0f10913] implementação da funcionalidadeB
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 arquivoB.html
+
+<b><i>> git status</b></i>
+
+On branch funcionalidadeB
+nothing to commit, working tree clean
+
+<b><i>> git checkout master</b></i>
+
+Switched to branch 'master'
+
+<b><i>> git branch</b></i>
+
+  funcionalidadeA
+  funcionalidadeB
+* master
+
+<b><i>> git branch -d funcionalidadeA</b></i>
+
+error: The branch 'funcionalidadeA' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D funcionalidadeA'.
+
+<b><i>> git branch -D funcionalidadeA </b></i>
+
+Deleted branch funcionalidadeA (was c3cd3b2).
+
+<b><i>> git branch</b></i>
+
+  funcionalidadeB
+* master
+
+Um branch nada mais é do que uma ramificação do projeto.
+                                                                       b---- branch funcionalidade
+            base
+--------\b-----------------------------------------/b-------- projeto (ramo principal)
+                                                                        base
+             b----- branch funcionalidadeA
+ponto b base comum, exato momento em que é criado a branch. Onde o ramo principal máster 
+branch máster e o novo ramo fazem a ramificação.
+
+ramificação/galho da arvore/projeto
+cada traço é um commit (snapshop, fotografia) no seu projeto, linha do tempo
+a linha principal é chamada de branch máster, ramo principal, linha comum do seu projeto
+podemos criar novas branchs para testar ou adicionar uma nova funcionalidade extra ao nosso 
+projeto, trabalhando em um projeto de forma colaborativa, com vários desenvolvedores, cada 
+desenvolvedor pode trabalhar em cada um do seu branch e quando terminar o trbalho submeter 
+ao branch principal.  
+
+Criar o arquivo .gitignore e acresentar o info.txt para este arquivo não ser versionado.
+
+Podemos criar um branch sempre quando acharmos necessário. Testar uma implementação 
+diferente, testar um recurso mas não quero mexer na branch principal (máster), cria e ativa 
+um novo branch, cria seus arquivos ali, talvez você não goste, deleta o branch criado e 
+volta para o branch principal e continua trabalhando. Melhor que trabalhar somente no 
+principal, evita muitos problemas. Dá o nome do branch da funcionalidade que você for 
+fazer.
+
+Observe sempre o * que informa qual a branch que estamos
+
+A funcionalidadeA é a branch atual (* e cor verde) e contem todos os commits da máster até 
+o momento da sua criação.
+Pereceba que o arquivoA.html faz parte da outra branch, por isso não aparecer no branch máster.
+Após realização dos testes pode-se excluir a branch.
+
+<td><a href="git_tag.html">git tag</a></td>
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

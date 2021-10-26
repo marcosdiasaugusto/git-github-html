@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>Git Config</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Configuração
+
+Geral
+
+As configurações do GIT são armazenadas no arquivo .gitconfig localizado dentro do 
+diretório do usuário do Sistema Operacional 
+(Ex.: Windows: C:\Users\Documents and Settings\Leonardo ou *nix /home/leonardo).
+
+As configurações realizadas através dos comandos abaixo serão incluídas no arquivo citado 
+acima.
+
+Setar usuário
+git config --global user.name "Leonardo Comelli"
+
+Setar email
+git config --global user.email leonardo@software-ltda.com.br
+
+Setar editor
+git config --global core.editor vim
+
+Setar ferramenta de merge
+git config --global merge.tool vimdiff
+
+Setar arquivos a serem ignorados
+git config --global core.excludesfile ~/.gitignore
+
+Listar configurações
+git config --list
+
+Adicione o comando "git config --get remote.origin.url", é util para pegar a URL do 
+repositório, principalmente no uso em Shell Scripts
+
+exemplo de como adicionar um alias no git:
+
+git config --global alias.graph 'log --graph --oneline --all --decorate'
+
+daí basta ir num repositório cheio de branches e fazer git graph para ver um log mostrando 
+os caminhos de cada branch
+-------------------------------------------------------------------------------------------
+Configurando seu nome de usuário e e-mail
+
+Você precisa definir quem você é * antes * de criar qualquer commit. Isso permitirá que os commits tenham o
+nome do autor correto e e-mail associado a eles.
+
+Não tem nada a ver com autenticação ao enviar para um repositório remoto (por exemplo, ao enviar para um repositório remoto
+repositório usando sua conta GitHub, BitBucket ou GitLab)
+Para declarar essa identidade para todos os repositórios, use git config --global
+Isso armazenará a configuração no arquivo .gitconfig do usuário: por exemplo, $ HOME / .gitconfig ou para Windows,
+% USERPROFILE% \. Gitconfig.
+git config --global user.name "Seu nome"
+git config --global user.email mail@example.com
+Para declarar uma identidade para um único repositório, use git config dentro de um repo.
+Isso armazenará a configuração dentro do repositório individual, no arquivo $ GIT_DIR / config. por exemplo.
+/path/to/your/repo/.git/config.
+cd / caminho / para / meu / repo
+git config user.name "Seu login no trabalho"
+git config user.email mail_at_work@example.com
+As configurações armazenadas no arquivo de configuração de um repositório terão precedência sobre a configuração global quando você usar esse repositório.
+Dicas: se você tiver identidades diferentes (uma para projeto de código aberto, uma no trabalho, uma para repositórios privados, ...) e você
+não se esqueça de definir o correto para cada repositório diferente em que estiver trabalhando:
+Remova uma identidade global
+git config --global --remove-section user.name
+git config --global --remove-section user.email
+Versão ≥ 2.8
+Para forçar o git a procurar sua identidade apenas nas configurações de um repositório, não na configuração global:
+ git config --global user.useConfigOnly true
+Dessa forma, se você esquecer de definir seu user.name e user.email para um determinado repositório e tentar fazer um commit, você
+verá:
+GoalKicker.com - Git® Notes para Profissionais 6
+nenhum nome foi fornecido e a detecção automática está desativada
+nenhum e-mail foi fornecido e a detecção automática está desativada
+
+<a href="git_historico_interface_grafica.PNG">Git Config</a>
+
+<a href="trabalhando com issues.PNG">Tralhando Issues</a>
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

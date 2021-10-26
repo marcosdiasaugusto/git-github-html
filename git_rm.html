@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>git rm</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+Remover arquivo/diretório
+
+Remover arquivo
+
+git rm meu_arquivo.txt
+
+Remover diretório
+
+git rm -r diretorio
+
+comando para remover o diretório adicionado por engano:
+
+git rm --cached -r directory-name
+
+Apagando um repositório
+
+Há momentos em que não queremos apagar nossos arquivos, mas queremos remover as informações 
+sobre aquele repositório criado com o $ git init (talvez criar um repositório novo com os 
+mesmos arquivos). Para isso não usamos o Git. Lembre-se que um repositório Git armazena as 
+informações dentro de uma pasta oculta chamada /.git. Então basta apagar esta pasta oculta 
+que o seu atual diretório deixará de ser um repositório.
+
+$ rm -rf .git
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>

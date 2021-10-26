@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <title>Desfazendo Revert e Reset</title>
+	  	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+		#myHeader2 {
+			background-color: lightblue;
+			color: black;
+			padding: 5px;
+			text-align: left;
+		} 
+		p.alinha{
+			padding-left: 1.8em 
+		}
+	</style>
+	  </head>
+<body>
+	<pre>
+
+<b><i>PS C:\workspace\Clone2\geek-git1> git status</b></i>
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   novo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+<b><i>
+PS C:\workspace\Clone2\geek-git1> git add novo.txt
+PS C:\workspace\Clone2\geek-git1> git status
+</b></i>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   novo.txt
+
+[master 4997b8b] Revert "Mudanças pontuais no arquivo novo.txt"
+ 1 file changed, 1 deletion(-)
+ 
+<b><i>PS C:\workspace\Clone2\geek-git1> git status</b></i>
+
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+
+nothing to commit, working tree clean
+
+<b><i>PS C:\workspace\Clone2\geek-git1> git log -2</b></i>
+
+commit 4997b8b2a2a2a6669cea7b95d2fadd55df324436 (HEAD -> master)
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 09:01:40 2021 -0300
+
+    Revert "Mudanças pontuais no arquivo novo.txt"
+
+    This reverts commit ae0020d21e48a87929b27a148558dfa9bab9e349.
+
+commit ae0020d21e48a87929b27a148558dfa9bab9e349 (origin/master, origin/HEAD)
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 08:59:01 2021 -0300
+    Mudanças pontuais no arquivo novo.txt
+	
+<b><i>PS C:\workspace\Clone2\geek-git1> git push -u origin master</b></i>
+
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 280 bytes | 140.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/marcosdiasaugusto/geek-git1.git
+   ae0020d..4997b8b  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+<b><i>PS C:\workspace\Clone2\geek-git1> git log -2</b></i>
+
+commit 4997b8b2a2a2a6669cea7b95d2fadd55df324436 (HEAD -> master, origin/master, origin/HEAD)Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 09:01:40 2021 -0300
+
+    Revert "Mudanças pontuais no arquivo novo.txt"
+
+    This reverts commit ae0020d21e48a87929b27a148558dfa9bab9e349.
+
+commit ae0020d21e48a87929b27a148558dfa9bab9e349
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 08:59:01 2021 -0300
+
+    Mudanças pontuais no arquivo novo.txt
+	
+<b><i>PS C:\workspace\Clone2\geek-git1> git log -3</b></i>
+<b><i>git revert ae0020d21e</b></i>
+
+commit 4997b8b2a2a2a6669cea7b95d2fadd55df324436 (HEAD -> master, origin/master, origin/HEAD)
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 09:01:40 2021 -0300
+
+    Revert "Mudanças pontuais no arquivo novo.txt"
+
+    This reverts commit ae0020d21e48a87929b27a148558dfa9bab9e349.
+
+commit ae0020d21e48a87929b27a148558dfa9bab9e349
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 08:59:01 2021 -0300
+
+    Mudanças pontuais no arquivo novo.txt
+
+commit b4644829b9f01435dab12508f222278c6a2f5f25
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Thu Oct 21 18:09:48 2021 -0300
+
+    Mudaanças efetuadas
+	
+<b><i>PS C:\workspace\Clone2\geek-git1></b></i>
+
+PS C:\workspace\Clone2\geek-git1> echo "************ Reset *****************"
+************ Reset *****************
+
+<b><i>PS C:\workspace\Clone2\geek-git1> git status</b></i>
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+        modified:   novo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+<b><i>
+PS C:\workspace\Clone2\geek-git1> git add novo.txt
+PS C:\workspace\Clone2\geek-git1> git commit -m "Novas alteraçoes pontuais no novo.txt"  
+</b></i>
+[master f7177a7] Novas alteraçoes pontuais no novo.txt
+ 1 file changed, 1 insertion(+)
+ 
+PS C:\workspace\Clone2\geek-git1> git log -3
+
+commit f7177a7c9d9b454d4caebacea65bcb9731bc5ee4 (HEAD -> master)
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 09:10:24 2021 -0300
+
+    Novas alteraçoes pontuais no novo.txt
+
+commit 4997b8b2a2a2a6669cea7b95d2fadd55df324436 (origin/master, origin/HEAD)
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 09:01:40 2021 -0300
+
+    Revert "Mudanças pontuais no arquivo novo.txt"
+
+    This reverts commit ae0020d21e48a87929b27a148558dfa9bab9e349.
+
+commit ae0020d21e48a87929b27a148558dfa9bab9e349
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 08:59:01 2021 -0300
+    Mudanças pontuais no arquivo novo.txt
+	
+PS C:\workspace\Clone2\geek-git1> git log -4
+
+commit f7177a7c9d9b454d4caebacea65bcb9731bc5ee4 (HEAD -> master)
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 09:10:24 2021 -0300
+
+    Novas alteraçoes pontuais no novo.txt
+
+commit 4997b8b2a2a2a6669cea7b95d2fadd55df324436 (origin/master, origin/HEAD)
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 09:01:40 2021 -0300
+    Revert "Mudanças pontuais no arquivo novo.txt"
+
+    This reverts commit ae0020d21e48a87929b27a148558dfa9bab9e349.
+
+commit ae0020d21e48a87929b27a148558dfa9bab9e349
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Fri Oct 22 08:59:01 2021 -0300
+
+    Mudanças pontuais no arquivo novo.txt
+
+commit b4644829b9f01435dab12508f222278c6a2f5f25
+Author: Henrique Dias <henriqued@gmail.com>
+Date:   Thu Oct 21 18:09:48 2021 -0300
+
+    Mudaanças efetuadas
+Auto-merging novo.txt
+CONFLICT (content): Merge conflict in novo.txt
+error: could not revert 4997b8b... Revert "Mudanças pontuais no arquivo novo.txt"        
+hint: after resolving the conflicts, mark the corrected paths
+hint: and commit the result with 'git commit'
+
+PS C:\workspace\Clone2\geek-git1> git status
+<b><i>git revert HEAD~1</b></i>
+
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You are currently reverting commit 4997b8b.
+  (fix conflicts and run "git revert --continue")
+  (use "git revert --skip" to skip this patch)
+  (use "git revert --abort" to cancel the revert operation)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   novo.txt
+no changes added to commit (use "git add" and/or "git commit -a")
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+PS C:\workspace\Clone2\geek-git1> git status
+
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You are currently reverting commit 4997b8b.
+  (fix conflicts and run "git revert --continue")
+  (use "git revert --skip" to skip this patch)
+  (use "git revert --abort" to cancel the revert operation)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   novo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\workspace\Clone2\geek-git1> git add novo.txt
+PS C:\workspace\Clone2\geek-git1> git commit -m "Novas da novas alteraçoes pontuais no novo.txt"[master e36545d] Novas da novas alteraçoes pontuais no novo.txt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ 
+PS C:\workspace\Clone2\geek-git1> git push -u origin master
+
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 593 bytes | 197.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/marcosdiasaugusto/geek-git1.git
+   4997b8b..e36545d  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+PS C:\workspace\Clone2\geek-git1>
+PS C:\workspace\Clone2\geek-git1> git log --oneline
+
+e36545d (HEAD -> master, origin/master, origin/HEAD) Novas da novas alteraçoes pontuais no novo.txt
+f7177a7 Novas alteraçoes pontuais no novo.txt
+4997b8b Revert "Mudanças pontuais no arquivo novo.txt"
+ae0020d Mudanças pontuais no arquivo novo.txt
+b464482 Mudaanças efetuadas
+4b4c658 Adicionando arquivo tres.txt
+ae8ec56 Adicionando arquivo dois.txt
+a302cc0 Adicionando arquivo um.txt
+f18cef6 Adicionando mais um arquivo
+503cac1 Adicionando outro arquivo
+487360e Adicionando novo arquivo
+ac9a980 Criaçao do arquivo README
+
+PS C:\workspace\Clone2\geek-git1>
+
+
+
+
+
+<a href="checkout.html">checkout</a></td>
+<a href="git_branch.html">git branch</a></td>
+<a href="git_rebase.html">git rebase</a></td>
+<a href="git_desfazendo_checkouts.html">Desfazendo Checkouts</a>
+
+</pre>
+<a href="git-github.html">Git-Github</a>
+</body>
+</html>
